@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import image from '../src/assets/heroimage/Gemini_Generated_Image_n8fs5qn8fs5qn8fs-Photoroom.png';
+
 const navItems = [
-  { label: "Home", target: "home" },
-  { label: "About", target: "about" },
-  { label: "Graphics", target: "graphics" },
-  { label: "Dev", target: "dev" },
+  { label: "Home",       target: "home" },
+  { label: "About",      target: "about" },
+  { label: "Graphics",   target: "graphics" },
+  { label: "Dev",        target: "dev" },
   { label: "Experience", target: "experience" },
-  { label: "Tools", target: "tools" },
-  { label: "Contact", target: "contact" },
+  { label: "Tools",      target: "tools" },
+  { label: "Contact",    target: "contact" },
 ];
 
 export default function Header() {
@@ -54,7 +55,7 @@ export default function Header() {
           top: 0; left: 0; right: 0;
           z-index: 1000;
           transition: all 0.4s ease;
-          padding: 0 2rem;
+          padding: 0 1.5rem;
           font-family: 'DM Sans', sans-serif;
         }
 
@@ -75,7 +76,7 @@ export default function Header() {
           gap: 1rem;
         }
 
-        /* ── Logo with avatar ── */
+        /* ── Logo ── */
         .logo {
           display: flex;
           align-items: center;
@@ -84,6 +85,7 @@ export default function Header() {
           border: none;
           cursor: pointer;
           flex-shrink: 0;
+          padding: 0;
         }
 
         .avatar-ring {
@@ -241,11 +243,13 @@ export default function Header() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          gap: 0.2rem;
+          gap: 0.15rem;
           z-index: 1050;
           opacity: 0;
           pointer-events: none;
           transition: opacity 0.35s ease;
+          overflow: hidden;
+          padding: 2rem 1.5rem;
         }
 
         .mobile-menu.open {
@@ -254,11 +258,12 @@ export default function Header() {
         }
 
         .mobile-avatar {
-          width: 72px; height: 72px;
+          width: 60px; height: 60px;
           border-radius: 50%;
           padding: 3px;
           background: linear-gradient(135deg, #ffc850, #ff8c00);
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.25rem;
+          flex-shrink: 0;
         }
 
         .mobile-avatar-inner {
@@ -276,14 +281,17 @@ export default function Header() {
 
         .mobile-nav-btn {
           font-family: 'Bebas Neue', sans-serif;
-          font-size: 2.6rem;
+          font-size: clamp(1.8rem, 7vw, 2.6rem);
           letter-spacing: 0.1em;
           color: rgba(255,255,255,0.18);
           background: none;
           border: none;
           cursor: pointer;
           transition: color 0.2s, transform 0.2s;
-          line-height: 1.2;
+          line-height: 1.25;
+          padding: 0;
+          width: 100%;
+          text-align: center;
         }
 
         .mobile-nav-btn:hover,
@@ -295,7 +303,8 @@ export default function Header() {
         .mobile-divider {
           width: 60px; height: 1px;
           background: rgba(255,200,80,0.3);
-          margin: 1rem 0;
+          margin: 0.85rem 0;
+          flex-shrink: 0;
         }
 
         .mobile-tagline {
@@ -305,6 +314,26 @@ export default function Header() {
           text-transform: uppercase;
           color: rgba(255,255,255,0.25);
         }
+
+        /* ── Hire me button in mobile menu ── */
+        .mobile-cta {
+          margin-top: 0.5rem;
+          padding: 0.65rem 2rem;
+          background: #ffc850;
+          color: #08080c;
+          border: none;
+          border-radius: 2px;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: background 0.2s;
+          flex-shrink: 0;
+        }
+
+        .mobile-cta:hover { background: #fff; }
 
         /* ── Breakpoints ── */
         @media (max-width: 1060px) {
@@ -324,10 +353,7 @@ export default function Header() {
           <button className="logo" onClick={() => scrollTo("home")}>
             <div className="avatar-ring">
               <div className="avatar-inner">
-                <img
-                  src= {image}
-                  alt="Marlon Ampoon"
-                />
+                <img src={image} alt="Marlon Ampoon" />
               </div>
             </div>
             <div className="logo-text">
@@ -352,7 +378,7 @@ export default function Header() {
             </button>
           </nav>
 
-          {/* Hamburger button */}
+          {/* Hamburger */}
           <button
             className={`hamburger${menuOpen ? " open" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -367,10 +393,7 @@ export default function Header() {
       <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
         <div className="mobile-avatar">
           <div className="mobile-avatar-inner">
-            <img
-              src={image}
-              alt="Marlon Ampoon"
-            />
+            <img src={image} alt="Marlon Ampoon" />
           </div>
         </div>
 
@@ -385,6 +408,10 @@ export default function Header() {
         ))}
 
         <div className="mobile-divider" />
+        <button className="mobile-cta" onClick={() => scrollTo("contact")}>
+          Hire Me
+        </button>
+        <div className="mobile-divider" style={{ marginTop: "0.85rem" }} />
         <span className="mobile-tagline">Web Dev · Graphic Artist</span>
       </div>
     </>

@@ -2,9 +2,6 @@ import Header from "../components/header";
 import image from '../src/assets/heroimage/Gemini_Generated_Image_n8fs5qn8fs5qn8fs-Photoroom.png';
 import BodyContents from "../components/body";
 import Footer from "../components/footer";
-// ─── Section Placeholder (replace each with your actual components) ──────────
-
-
 // ─── Hero ────────────────────────────────────────────────────────────────────
 function Hero() {
   const scrollTo = (id: string) =>
@@ -18,11 +15,12 @@ function Hero() {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
-        justifyContent: "center",       
+        justifyContent: "center",
         maxWidth: "997px",
         margin: "0 auto",
         width: "100%",
-        position: "relative",padding: "33px"
+        position: "relative",
+        padding: "33px 24px",
       }}
     >
       {/* Decorative glow */}
@@ -43,7 +41,7 @@ function Hero() {
         width: "100%",
       }}>
         {/* Text side */}
-        <div style={{ flex: "1 1 300px", zIndex: 1 }}>
+        <div style={{ flex: "1 1 280px", zIndex: 1, minWidth: 0 }}>
           <p style={{
             fontFamily: "'DM Sans', sans-serif",
             fontSize: "0.72rem",
@@ -57,7 +55,7 @@ function Hero() {
 
           <h1 style={{
             fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: "clamp(3.5rem, 10vw, 8.5rem)",
+            fontSize: "clamp(3rem, 10vw, 8.5rem)",
             letterSpacing: "0.04em",
             lineHeight: 0.93,
             color: "#fff",
@@ -87,7 +85,7 @@ function Hero() {
 
           <p style={{
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: "clamp(0.9rem, 2vw, 1.1rem)",
+            fontSize: "clamp(0.85rem, 2vw, 1.1rem)",
             color: "rgba(255,255,255,0.5)",
             maxWidth: "440px",
             lineHeight: 1.75,
@@ -151,10 +149,12 @@ function Hero() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          width: "100%",
+          maxWidth: "clamp(140px, 26vw, 320px)",
         }}>
           <div style={{
-            width: "clamp(180px, 26vw, 320px)",
-            height: "clamp(180px, 26vw, 320px)",
+            width: "clamp(140px, 26vw, 320px)",
+            height: "clamp(140px, 26vw, 320px)",
             borderRadius: "50%",
             padding: "4px",
             background: "linear-gradient(135deg, #ffc850 0%, #ff8c00 50%, #08080c 100%)",
@@ -235,22 +235,48 @@ export default function App() {
           z-index: 0;
         }
 
-        #root { position: relative; z-index: 1; }
+        #root { 
+  position: relative; 
+  z-index: 1; 
+  overflow-x: hidden;   /* ← add this */
+}
 
-        main { padding-top: 72px;width: 100vw; }
+        main {
+  padding-top: 72px;
+  width: 100%;          /* ← change from 100vw to 100% */
+  overflow-x: hidden;   /* ← add this as a safety net */
+}
+
+        /* ── Mobile hero layout fix ── */
+        @media (max-width: 600px) {
+          #home > div:first-of-type {
+            flex-direction: column-reverse !important;
+            align-items: center !important;
+          }
+          #home > div:first-of-type > div:last-child {
+            max-width: 160px !important;
+            width: 160px !important;
+          }
+          #home > div:first-of-type > div:first-child {
+            flex: 1 1 100% !important;
+            width: 100%;
+          }
+        }
       `}</style>
 
-      <Header />
+      
 
       <main>
+        <Header />
         {/* ── HOME / HERO ──────────────────────────────── */}
         <Hero />
 
-        {/* ── ABOUT ────────────────────────────────────── */}
-        <BodyContents />       
+        {/* ── ABOUT + REST ─────────────────────────────── */}
+        <BodyContents />
+        <Footer />
       </main>
 
-      <Footer/>
+      
     </>
   );
 }
