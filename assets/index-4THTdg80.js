@@ -3108,15 +3108,11 @@ Error generating stack: `+l.message+`
           z-index: 0;
         }
 
-        #root { 
-  position: relative; 
-  z-index: 1; 
-  overflow-x: hidden;   /* ← add this */
-}
+
 
         main {
   padding-top: 72px;
-  width: 100%;          /* ← change from 100vw to 100% */
+  width: 100vw;          /* ← change from 100vw to 100% */
   overflow-x: hidden;   /* ← add this as a safety net */
 }
 
@@ -3135,4 +3131,4 @@ Error generating stack: `+l.message+`
             width: 100%;
           }
         }
-      `}),u.jsxs("main",{children:[u.jsx(sd,{}),u.jsx(t5,{}),u.jsx($d,{}),u.jsx(e5,{})]})]})}od.createRoot(document.getElementById("root")).render(u.jsx(St.StrictMode,{children:u.jsx(a5,{})}));
+      `}),u.jsx(sd,{}),u.jsxs("main",{children:[u.jsx(t5,{}),u.jsx($d,{})]}),u.jsx(e5,{})]})}od.createRoot(document.getElementById("root")).render(u.jsx(St.StrictMode,{children:u.jsx(a5,{})}));
