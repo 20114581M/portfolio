@@ -55,7 +55,6 @@ const projects: Project[] = [
 
 // ── Component ─────────────────────────────────────────────────────────────────
 export default function Dev() {
-  const [active, setActive] = useState<number | null>(null);
   const [lightbox, setLightbox] = useState<{ src: string; idx: number } | null>(null);
 
   const navigateLightbox = (dir: 1 | -1) => {
