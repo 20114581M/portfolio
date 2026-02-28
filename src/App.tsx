@@ -235,15 +235,11 @@ export default function App() {
           z-index: 0;
         }
 
-        #root { 
-  position: relative; 
-  z-index: 1; 
-  overflow-x: hidden;   /* ← add this */
-}
+
 
         main {
   padding-top: 72px;
-  width: 100%;          /* ← change from 100vw to 100% */
+  width: 100vw;          /* ← change from 100vw to 100% */
   overflow-x: hidden;   /* ← add this as a safety net */
 }
 
@@ -264,18 +260,18 @@ export default function App() {
         }
       `}</style>
 
-      
+      <Header />
 
       <main>
-        <Header />
+        
         {/* ── HOME / HERO ──────────────────────────────── */}
         <Hero />
 
         {/* ── ABOUT + REST ─────────────────────────────── */}
         <BodyContents />
-        <Footer />
+        
       </main>
-
+        <Footer />
       
     </>
   );
