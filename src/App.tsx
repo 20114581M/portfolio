@@ -100,7 +100,7 @@ function Hero() {
 
           <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap" }}>
             <button
-              onClick={(Graphics) => scrollTo("graphics")}
+              onClick={() => scrollTo("graphics")}
               style={{
                 padding: "0.75rem 2rem",
                 background: "#ffc850",

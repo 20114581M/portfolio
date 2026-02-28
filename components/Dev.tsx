@@ -700,8 +700,6 @@ export default function Dev() {
             <div
               key={project.id}
               className="dev-row"
-              onMouseEnter={() => setActive(project.id)}
-              onMouseLeave={() => setActive(null)}
             >
               {/* Number column */}
               <div className="dev-row-num-col">
