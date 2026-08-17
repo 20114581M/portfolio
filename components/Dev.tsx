@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 // ── Assets ───────────────────────────────────────────────────────────────────
+import proj0 from "../src/assets/Time8out/Screenshot 2026-08-17 132006.png";
 import proj1 from "../src/assets/Dev/Screenshot 2026-02-28 022631.png";
 import proj2 from "../src/assets/Dev/Screenshot 2026-02-28 023155.png";
 import proj3 from "../src/assets/Dev/Screenshot 2026-02-28 023643.png";
@@ -18,6 +19,17 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    id: 0,
+    src: proj0,
+    title: "Time8out",
+    subtitle: "Employee Time & Payroll Management Platform",
+    description:
+      "Time8out is an employee time management platform built for small businesses. Handles shift logging, break tracking, automatic deduction computation, and real-time payslip generation — giving employers a live dashboard of who's clocked in, on break, and accruing pay.",
+    tags: ["Web App", "SaaS", "Time Tracking", "Payroll"],
+    type: "Time & Payroll Platform",
+    year: "2026",
+  },
   {
     id: 1,
     src: proj1,
