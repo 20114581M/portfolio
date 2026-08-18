@@ -1,7 +1,24 @@
 import { useState } from "react";
 
 // ── Assets ───────────────────────────────────────────────────────────────────
-import proj0 from "../src/assets/Time8out/Screenshot 2026-08-17 132006.png";
+import t01 from "../src/assets/Time8out/Screenshot 2026-08-17 132006.png";
+import t02 from "../src/assets/Time8out/Screenshot 2026-08-17 132015.png";
+import t03 from "../src/assets/Time8out/Screenshot 2026-08-17 132024.png";
+import t04 from "../src/assets/Time8out/Screenshot 2026-08-17 132038.png";
+import t05 from "../src/assets/Time8out/Screenshot 2026-08-17 132046.png";
+import t06 from "../src/assets/Time8out/Screenshot 2026-08-17 132055.png";
+import t07 from "../src/assets/Time8out/Screenshot 2026-08-17 132109.png";
+import t08 from "../src/assets/Time8out/Screenshot 2026-08-17 132117.png";
+import t09 from "../src/assets/Time8out/Screenshot 2026-08-17 132124.png";
+import t10 from "../src/assets/Time8out/Screenshot 2026-08-17 132133.png";
+import t11 from "../src/assets/Time8out/Screenshot 2026-08-17 132140.png";
+import t12 from "../src/assets/Time8out/Screenshot 2026-08-17 132148.png";
+import t13 from "../src/assets/Time8out/Screenshot 2026-08-17 132158.png";
+import t14 from "../src/assets/Time8out/Screenshot 2026-08-17 132208.png";
+import t15 from "../src/assets/Time8out/Screenshot 2026-08-17 132216.png";
+import t16 from "../src/assets/Time8out/Screenshot 2026-08-17 132230.png";
+import t17 from "../src/assets/Time8out/Screenshot 2026-08-17 132238.png";
+
 import proj1 from "../src/assets/Dev/Screenshot 2026-02-28 022631.png";
 import proj2 from "../src/assets/Dev/Screenshot 2026-02-28 023155.png";
 import proj3 from "../src/assets/Dev/Screenshot 2026-02-28 023643.png";
@@ -18,10 +35,15 @@ interface Project {
   year: string;
 }
 
+const time8outImages = [
+  t01, t02, t03, t04, t05, t06, t07, t08, t09,
+  t10, t11, t12, t13, t14, t15, t16, t17,
+];
+
 const projects: Project[] = [
-  {
-    id: 0,
-    src: proj0,
+  ...time8outImages.map((src, i) => ({
+    id: i,
+    src,
     title: "Time8out",
     subtitle: "Employee Time & Payroll Management Platform",
     description:
@@ -29,9 +51,9 @@ const projects: Project[] = [
     tags: ["Web App", "SaaS", "Time Tracking", "Payroll"],
     type: "Time & Payroll Platform",
     year: "2026",
-  },
+  })),
   {
-    id: 1,
+    id: 17,
     src: proj1,
     title: "Steinposner Century 21",
     subtitle: "All-in-One Agent Marketing Hub",
@@ -42,7 +64,7 @@ const projects: Project[] = [
     year: "2025",
   },
   {
-    id: 2,
+    id: 18,
     src: proj2,
     title: "Women's Health & Cosmetics",
     subtitle: "Health & Beauty Storefront",
@@ -53,7 +75,7 @@ const projects: Project[] = [
     year: "2025",
   },
   {
-    id: 3,
+    id: 19,
     src: proj3,
     title: "Salon Beauty Supply",
     subtitle: "Professional Beauty E-Commerce",
