@@ -75,7 +75,7 @@ export default function Footer() {
         .footer-body {
           max-width: 1300px;
           margin: 0 auto;
-          padding: 3.5rem 33px 2rem;
+          padding: 3.5rem 3rem 2rem;
           display: grid;
           grid-template-columns: 1.4fr 1fr 1fr;
           gap: 3rem;
@@ -94,6 +94,7 @@ export default function Footer() {
           .footer-body {
             grid-template-columns: 1fr;
           }
+          .footer-social-btn { width: 44px; height: 44px; }
         }
 
         /* ── Brand column ── */
@@ -142,8 +143,8 @@ export default function Footer() {
         }
 
         .footer-social-btn {
-          width: 36px;
-          height: 36px;
+          width: 40px;
+          height: 40px;
           border-radius: 2px;
           border: 1px solid rgba(255,200,80,0.15);
           background: rgba(255,255,255,0.02);
@@ -268,9 +269,9 @@ export default function Footer() {
 
         /* ── Bottom bar ── */
         .footer-bottom {
-          max-width: 997px;
+          max-width: 1300px;
           margin: 0 auto;
-          padding: 1.25rem 33px 2rem;
+          padding: 1.25rem 3rem 2rem;
           display: flex;
           align-items: center;
           justify-content: space-between;

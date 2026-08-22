@@ -55,10 +55,10 @@ export default function Contact() {
           min-height: 100vh;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          max-width: 997px;
+          max-width: 1300px;
           margin: 0 auto;
-          padding: 6rem 33px;
-          gap: 5rem;
+          padding: 6rem 3rem;
+          gap: 6rem;
           align-items: center;
           animation: float-up 0.8s ease both;
         }
@@ -75,6 +75,13 @@ export default function Contact() {
             border-top: 1px solid rgba(255,200,80,0.1);
             padding-top: 3rem !important;
           }
+        }
+
+        @media (max-width: 480px) {
+          .contact-section { padding: 3.5rem 18px; gap: 2.75rem; }
+          .contact-headline { font-size: clamp(2.6rem, 12vw, 4rem); }
+          .contact-subtext { max-width: 100%; }
+          .copy-btn, .social-link { min-height: 44px; }
         }
 
         .contact-left {
@@ -403,9 +410,9 @@ export default function Contact() {
         }
 
         .contact-footer {
-          max-width: 997px;
+          max-width: 1300px;
           margin: 0 auto;
-          padding: 1.5rem 33px 3rem;
+          padding: 1.5rem 3rem 3rem;
           display: flex;
           align-items: center;
           justify-content: space-between;

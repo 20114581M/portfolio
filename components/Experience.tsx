@@ -5,7 +5,7 @@ export default function Experience() {
       company: "Century 21 Steinposner",
       role: "IT / Project Manager",
       department: "TheMedSpa HB",
-      period: "February 2024 – June 2025",
+      period: "July 2024 – June 2026",
       bullets: [
         "Website Management: Oversaw website updates, content management, and UX improvements, ensuring alignment with branding guidelines.",
         "Marketing Flier Creation: Designed and produced marketing materials that boosted client acquisition and retention.",

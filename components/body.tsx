@@ -9,8 +9,8 @@ export default function BodyContents(){
     return (    
         <>
         <About />
-        <Graphics />
         <Dev />
+        <Graphics />
         <Experience />
         <Tools />
         <Contact/>

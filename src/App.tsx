@@ -263,16 +263,16 @@ export default function App() {
       <Header />
 
       <main>
-        
+
         {/* ── HOME / HERO ──────────────────────────────── */}
         <Hero />
 
         {/* ── ABOUT + REST ─────────────────────────────── */}
         <BodyContents />
-        
+
       </main>
         <Footer />
-      
+
     </>
   );
 }
